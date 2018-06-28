@@ -1,13 +1,13 @@
-﻿import { NgModule }      from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
 
-import { AppComponent }  from './app.component';
-import { routing }        from './app.routing';
+import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
@@ -16,6 +16,9 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import { AdminPanelComponent } from './admin_panel/admin.panel.component';
+import { UserPanelComponent } from './user_panel/user.panel.component';
+import { NotFoundComponent } from './page_not_found/404.component';
 
 @NgModule({
     imports: [
@@ -26,6 +29,9 @@ import { RegisterComponent } from './register/index';
     ],
     declarations: [
         AppComponent,
+        AdminPanelComponent,
+        UserPanelComponent,
+        NotFoundComponent,
         AlertComponent,
         HomeComponent,
         LoginComponent,
@@ -48,4 +54,6 @@ import { RegisterComponent } from './register/index';
     bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+
+}
