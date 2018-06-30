@@ -7,17 +7,16 @@ import { AuthGuard } from './_guards/index';
 import { UserPanelComponent } from './user_panel/user.panel.component';
 import { AdminPanelComponent } from './admin_panel/admin.panel.component';
 import { NotFoundComponent } from './page_not_found/404.component';
+import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: AppComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'user-panel', component: UserPanelComponent, canActivate: [AuthGuard] },
     { path: 'admin-panel', component: AdminPanelComponent, canActivate: [AuthGuard] },
-    // { path: '',
-    //     redirectTo: '/heroes',
-    //     pathMatch: 'full'
-    // },
+
     { path: '**', component: NotFoundComponent }
 ];
 
