@@ -22,17 +22,29 @@ import { AppComponent } from './app.component';
 
 
 export const routerConfig: Routes = [
+
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: 'user-panel',
-        component: UserPanelComponent
+        component: UserPanelComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: 'admin-panel',
-        component: AdminPanelComponent
+        component: AdminPanelComponent,
+        canActivate: [AuthGuard],
     },
     {
         path: '',
