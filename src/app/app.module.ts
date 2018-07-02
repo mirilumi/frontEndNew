@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { fakeBackendProvider } from './_helpers/index';
 
 import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+import { routerConfig } from './app.routing';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { JwtInterceptor } from './_helpers/index';
@@ -19,15 +19,10 @@ import { AdminPanelComponent } from './admin_panel/admin.panel.component';
 import { UserPanelComponent } from './user_panel/user.panel.component';
 import { NotFoundComponent } from './page_not_found/404.component';
 import { ToolbarModule } from './toolbar/toolbar.module';
+import { RouterModule } from '@angular/router';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        ToolbarModule,
-        routing
-    ],
     declarations: [
         AppComponent,
         AdminPanelComponent,
@@ -37,6 +32,13 @@ import { ToolbarModule } from './toolbar/toolbar.module';
         HomeComponent,
         LoginComponent,
         RegisterComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        ToolbarModule,
+        RouterModule.forRoot(routerConfig)
     ],
     providers: [
         AuthGuard,
@@ -48,8 +50,6 @@ import { ToolbarModule } from './toolbar/toolbar.module';
             useClass: JwtInterceptor,
             multi: true
         },
-
-        // provider used to create fake backend
         fakeBackendProvider
     ],
     bootstrap: [AppComponent]
@@ -58,3 +58,5 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 export class AppModule {
 
 }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

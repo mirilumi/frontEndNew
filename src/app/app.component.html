@@ -1,34 +1,20 @@
-﻿<!-- main app container -->
-<!-- <div class="jumbotron">
+﻿
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <alert></alert>
-            <router-outlet></router-outlet>
-        </div>
+        <div class = "navbar-header">
+            <a class="navbar-brand">Angular Router</a>
+            <ul class="nav navbar-nav" routerLinkActive="active">
+                <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="user-panel">User</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="admin-panel">Admin</a></li>
+            </ul>
+        </div>  
     </div>
-</div> -->
+</nav>
+    
 
-<!-- <div class="wrapper">
-    <div>
-        <router-outlet></router-outlet>
-        
-    </div>
-</div> -->
-
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand">Project Brief</a>
-                <ul class="nav navbar-nav" routerLinkActive="active">
-                    <li class="nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" routerLink="/admin-panel">Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" routerLink="/user-panel">User</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>           
+    
 
 
 
